@@ -10,7 +10,7 @@ void op_token_error(int error_code)
     char *exit_str = NULL;
     char **new_toks = NULL;
 
-    total_toks = token_arr_len();
+    total_toks = op_tok_len();
     new_toks = malloc(sizeof(char *) * (total_toks + 2));
     if (!op_toks)
     {

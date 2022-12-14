@@ -37,7 +37,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 
     if (op_toks[1] == NULL)
     {
-        op_token_error(no_int_error(line_number));
+        op_token_error(monty_arg_err(line_number));
         return;
     }
 
@@ -47,7 +47,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
             continue;
         if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
         {
-            op_token_error(no_int_error(line_number));
+            op_token_error(monty_arg_err(line_number));
             return;
         }
     }

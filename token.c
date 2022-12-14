@@ -2,7 +2,7 @@
 
 char **strtok(char *str, char *delims);
 int chDelimit(char ch, char *delims);
-int strlen(char *str, char *delims);
+int tok_strlen(char *str, char *delims);
 int str_word_count(char *str, char *delims);
 char *str_next_word(char *str, char *delims);
 
@@ -31,7 +31,7 @@ char **strtok(char *str, char *delims)
         return (NULL);
     while (i < word_count)
     {
-        wordLen = strlen(str, delims);
+        wordLen = tok_strlen(str, delims);
         if (chDelimit(*str, delims))
         {
             str = str_next_word(str, delims);
@@ -85,7 +85,7 @@ int chDelimit(char ch, char *delims)
 }
 
 /**
- * strlen - gets the word length of current word in str
+ * tok_strlen - gets the word length of current word in str
  *
  * @str: string to get word length from current word
  * @delims: delimitors to use to delimit words
@@ -93,7 +93,7 @@ int chDelimit(char ch, char *delims)
  * Return: word length of current word
  */
 
-int strlen(char *str, char *delims)
+int tok_strlen(char *str, char *delims)
 {
     int word_len = 0, pending = 1, i = 0;
 

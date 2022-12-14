@@ -47,7 +47,7 @@ int check_mode(stack_t *stack);
 void free_op_tok(void);
 unsigned int op_tok_len(void);
 int exec_monty(FILE *script_fd);
-void set_op_tok_error(int error_code);
+void op_token_error(int error_code);
 
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
