@@ -126,7 +126,7 @@ int exec_monty(FILE *script_fd)
         {
             if (line_delim(line, DELIMS))
                 continue;
-            free_stack(&stack);
+            untied_stack(&stack);
             return (mall_err());
         }
         else if (op_toks[0][0] == '#')
@@ -137,7 +137,7 @@ int exec_monty(FILE *script_fd)
         op_func = match_op(op_toks[0]);
         if (op_func == NULL)
         {
-            free_stack(&stack);
+            untied_stack(&stack);
             exit_status = unknown_err(op_toks[0], line_number);
             free_op_tok();
             break;
@@ -155,7 +155,7 @@ int exec_monty(FILE *script_fd)
         }
         free_op_tok();
     }
-    free_stack(&stack);
+    untied_stack(&stack);
 
     if (line && *line == 0)
     {

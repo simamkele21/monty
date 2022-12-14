@@ -1,13 +1,13 @@
 #include <stdlib.h>
 
-char **strtok(char *str, char *delims);
+char **strtow(char *str, char *delims);
 int chDelimit(char ch, char *delims);
 int tok_strlen(char *str, char *delims);
 int str_word_count(char *str, char *delims);
 char *str_next_word(char *str, char *delims);
 
 /**
- * strtok - takes a string and seperates its words
+ * strtow - takes a string and seperates its words
  *
  * @str: string to seperate into words
  * @delims: delimitors to use to delimit words
@@ -15,7 +15,7 @@ char *str_next_word(char *str, char *delims);
  * Return: 2D array of pointers to each word
  */
 
-char **strtok(char *str, char *delims)
+char **strtow(char *str, char *delims)
 {
     char **words = NULL;
     int word_count, wordLen, n, i = 0;
